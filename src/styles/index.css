@@ -1,0 +1,224 @@
+@font-face {
+  font-family: "font-1";
+  src: url(../assets/fonts/Questrial-Regular.ttf);
+}
+@font-face {
+  font-family: "font-2";
+  src: url(../assets/fonts/Michroma-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+*::-moz-selection {
+  color: #fafeff;
+  background: #00c1ec;
+}
+*::selection {
+  color: #fafeff;
+  background: #00c1ec;
+}
+
+body {
+  font-family: "font-1", sans-serif;
+  height: 100vh;
+  background-color: #fafeff;
+  color: rgb(40, 40, 40);
+  overflow: hidden;
+}
+@media screen and (max-width: 430px) {
+  body {
+    position: relative;
+    max-width: 100vw;
+    overflow-y: initial;
+  }
+}
+
+main {
+  position: relative;
+}
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  height: 58vh;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  gap: 150px;
+}
+.notFound h2 {
+  font-size: 4rem;
+  padding: 2rem;
+}
+.notFound h2:after {
+  content: "";
+  height: 500px;
+  width: 500px;
+  background: #e7f7fe;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.notFound h3 {
+  font-size: 2rem;
+  transition: 0.4s;
+  padding: 10px;
+}
+.notFound h3:hover {
+  transform: scale(1.3);
+}
+.notFound .error {
+  display: flex;
+  justify-content: center;
+  gap: 1Opx;
+}
+
+.navigation {
+  position: absolute;
+  top: 1rem;
+  left: 1.4rem;
+  font-size: 1.4rem;
+  line-height: 28px;
+  color: rgb(141, 141, 141);
+}
+.navigation:before {
+  content: "";
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background: rgba(6, 74, 116, 0.758);
+  top: -150px;
+  left: -160px;
+  z-index: -1;
+  animation: navAnim 10s infinite alternate;
+}
+@keyframes navAnim {
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media screen and (max-width: 430px) {
+  .navigation:before {
+    height: 50px;
+    width: 50px;
+  }
+}
+.navigation .nav-active {
+  color: rgb(255, 255, 255);
+}
+.navigation ul:hover li:not(:hover) {
+  opacity: 0.5;
+}
+.navigation ul:hover li:hover {
+  color: #0000FF;
+}
+.navigation .nav-portfolio {
+  cursor: pointer;
+  display: flex;
+  padding-right: 6rem;
+  transition: 0.5s;
+}
+@media screen and (max-width: 400px) {
+  .navigation .nav-portfolio {
+    color: rgba(6, 74, 116, 0.758);
+  }
+}
+.navigation .nav-portfolio:hover .nav-projects,
+.navigation .nav-portfolio .nav-projects:hover {
+  visibility: visible;
+  opacity: 1;
+}
+.navigation .nav-portfolio:hover .nav-projects li,
+.navigation .nav-portfolio .nav-projects:hover li {
+  transform: rotatey(0deg);
+}
+.navigation .nav-portfolio .nav-projects {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  padding: 0 40px;
+  width: 300px;
+  transform: translateX(70px);
+  transition: 0.3s;
+  perspective: 500px;
+}
+.navigation .nav-portfolio .nav-projects li {
+  transform: rotatey(30deg) scaleX(1.2);
+  transform-origin: center;
+  transition: 0.3s;
+  color: rgb(233, 225, 109);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  background-color: #e7f7fe;
+}
+@media screen and (max-width: 540px) {
+  footer {
+    font-size: 11px;
+  }
+}
+footer .address {
+  display: flex;
+  position: relative;
+  height: 70px;
+  width: 520px;
+}
+@media screen and (max-width: 540px) {
+  footer .address {
+    display: none;
+  }
+}
+footer .address .content {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: space-around;
+  height: 70px;
+  width: 520px;
+  color: #333;
+}
+footer .address .content .p_footer {
+  display: flex;
+  margin: 0;
+}
+footer .address .content .h2_footer {
+  margin: 0;
+}
+footer .credits {
+  display: flex;
+  text-align: center;
+  left: 10px;
+  margin: 0;
+  color: #333;
+}
+footer .credits .p_footer {
+  display: flex;
+  font-size: 15px;
+  margin: 0;
+  padding: 0 15px 0 0;
+}
+@media screen and (max-width: 740px) {
+  footer .credits {
+    transform: translateY(0px);
+    font-size: 0.7rem;
+    margin-right: 1rem;
+  }
+}/*# sourceMappingURL=index.css.map */
